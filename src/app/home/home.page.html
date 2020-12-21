@@ -1,0 +1,59 @@
+<!-- <ion-header>
+  <div class="hHdr">
+    <div class="topNavLogo"><h1><a href="#"><img src="../../../../assets/images/school-app-logo.png"/></a></h1></div>
+     
+     <div class="pageToFro">
+       <a href="" class="backBtn"><i class="ti-arrow-left"></i></a>
+       <h4>Sign In</h4>
+     </div>
+   </div>
+</ion-header> -->
+
+<ion-content class="homePage">
+  <div class="pagecontainer">
+  <div class="hHdr">
+   <div class="topNavLogo"><h1><a href="#"><img src="../../../../assets/images/school-app-logo.png"/></a></h1></div>
+    
+    <div class="pageToFro">
+      <a href="" class="backBtn"><i class="ti-arrow-left"></i></a>
+      <h4>Sign In</h4>
+    </div>
+  </div><!--fixHdr ends-->
+  
+  
+  
+  <div class="mainContainer">
+  
+  
+  <p class="aCentre">Try As</p>
+  <ul class="siginTypes">
+    <li (click)="institudeRegister()">Institute</li>
+     <li>Student</li>
+  </ul>
+  
+  
+  
+  <h5 class="orHead">Or Sign in using</h5>
+  <div class="userLogin">
+  <form #login="ngForm" id="loginform" (ngSubmit)="verifylogin(login)" >
+    <input type="text" placeholder="Username" name="username" [(ngModel)]="username" #un="ngModel" required>
+    <span class="error" *ngIf="un.errors && (un.dirty || un.touched || login.submitted)">Username is required</span>
+    <input type="password" placeholder="Password" name="password" [(ngModel)]="password" #pw="ngModel" required>
+    <span class="error" *ngIf="pw.errors && (pw.dirty || pw.touched || login.submitted)">Password is required</span>
+    <input type="submit"/>
+  </form>
+  </div>
+  
+  <p class="troubleMsg">Trouble Signing In? <a href="">Contact</a> your admin</p>
+  
+  </div><!--mainContainer-->
+  
+  <div class="clear"></div> 
+  
+  
+   
+   <a href="javascript:void(0);" class="scrollup" style="display: block;">↑</a>
+  
+    
+     </div> <!--homePagecontainer ends-->
+</ion-content>

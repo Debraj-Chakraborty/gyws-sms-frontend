@@ -1,0 +1,61 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>register-institude</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div class="pagecontainer">
+    <div class="hHdr">
+     <div class="topNavLogo"><h1><a href="#"><img src="../../../../assets/images/school-app-logo.png"/></a></h1></div>
+      
+      <div class="pageToFro">
+        <!-- <a href="" class="backBtn"><i class="ti-arrow-left"></i></a>  -->
+        <ion-back-button style="display: block;"></ion-back-button>
+        <h4>Register</h4></div>
+    </div><!--fixHdr ends-->
+    
+
+    
+    <div class="mainContainer">
+    
+    <h5 class="orHead">Register Your Institute</h5>
+    <div class="registerLogin">
+    <form #register="ngForm" (ngSubmit)="instituderegistration(register)">
+      <input type="text" placeholder="Institute Name" name="instname" [(ngModel)]="instname" #in="ngModel" required autocomplete="off" style="text-transform: capitalize;" oninput="this.value=this.value.replace(/[^A-Za-z ]/g,'');">
+      <span class="error" *ngIf="in.errors && (in.dirty || in.touched || register.submitted)">Institute Name is required</span>
+      <input type="text" placeholder="User Name" name="user" [(ngModel)]="user" #un="ngModel" required autocomplete="off" >
+      <span class="error" *ngIf="un.errors && (un.dirty || un.touched || register.submitted)">Username is required</span>
+      <input type="text" placeholder="City" name="city" [(ngModel)]="city" #ct="ngModel" required autocomplete="off" style="text-transform: capitalize;" oninput="this.value=this.value.replace(/[^A-Za-z ]/g,'');">
+      <span class="error" *ngIf="ct.errors && (ct.dirty || ct.touched || register.submitted)">City is required</span>
+      <input type="text" placeholder="State" name="state" [(ngModel)]="state" #st="ngModel" required autocomplete="off" style="text-transform: capitalize;" oninput="this.value=this.value.replace(/[^A-Za-z ]/g,'');">
+      <span class="error" *ngIf="st.errors && (st.dirty || st.touched || register.submitted)">State is required</span>
+      <input type="text" placeholder="District" name="dist" [(ngModel)]="dist" #dt="ngModel" required autocomplete="off" style="text-transform: capitalize;" oninput="this.value=this.value.replace(/[^A-Za-z ]/g,'');">
+      <span class="error" *ngIf="dt.errors && (dt.dirty || dt.touched || register.submitted)">District is required</span>
+      <input type="text" placeholder="Pin" name="pincode" [(ngModel)]="pincode" #pin="ngModel" required maxlength="6" minlength="6" autocomplete="off" pattern="^[1-9][0-9]*$" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
+      <span class="error" *ngIf="pin.errors && (pin.dirty || pin.touched || register.submitted)">Pincode is required</span>
+      <input type="password" placeholder="Password" name="password" [(ngModel)]="password" #pwd="ngModel" required maxlength="10" minlength="10" autocomplete="off" pattern="^[1-9][0-9]*$" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
+      <span class="error" *ngIf="pwd.errors && (pwd.dirty || pwd.touched || register.submitted)">Password is required</span>
+      <div class="logoImageUpload">
+      <p>Upload Institute Logo</p>
+      <div class="logoPreview"><img src="{{profile_picture}}"></div>
+      <input id="myFile" name="filename" type="file" name="profile_picture" (change)="changeprofilePic($event.target)" accept="image/jpg,image/jpeg,image/png">
+      <span class="error" style="margin-left: 13%;" *ngIf="errormsg">{{errormsg}}</span>
+      </div>
+      <input type="submit"/>
+    </form>
+    </div>
+    
+    <p class="troubleMsg">Trouble Signing Up? <a href="">Contact</a> your admin</p>
+    
+    </div><!--mainContainer-->
+    
+    <div class="clear"></div> 
+    
+    
+     
+     <a href="javascript:void(0);" class="scrollup" style="display: block;">↑</a>
+    
+      
+       </div> <!--homePagecontainer ends-->
+</ion-content>
