@@ -5,7 +5,7 @@ import { ToastController, AlertController, Platform } from '@ionic/angular';
   providedIn: 'root'
 })
 export class DataserviceService {
-  backendUrl = "http://sms.codesbyte.com:4101/";
+  backendUrl = "https://sms.codesbyte.com:4101/";
   baseUrl = this.backendUrl+"api/v1/";
   constructor(
     private http: HttpClient,
